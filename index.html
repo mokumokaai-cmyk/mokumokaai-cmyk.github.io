@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>K.K | PM・上流工程・Web開発</title>
-<meta name="description" content="要件定義からリリース・運用まで一貫して担う、PM／上流SE。開発17年・28案件。Web開発、業務システム、生成AI活用、組織づくりまで対応します。">
+<meta name="description" content="ホームページ制作から業務システムの導入まで、やりたいことの整理から一緒に進めます。PM・上流SEとして17年・28案件の経験があります。ご相談・お見積もりは無料です。">
 <meta property="og:title" content="K.K | PM・上流工程・Web開発">
 <meta property="og:description" content="要件定義からリリース・運用まで一貫して担う、PM／上流SE。開発17年・28案件。">
 <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
   }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
@@ -105,6 +105,30 @@ details.history summary{cursor:pointer;font-weight:700;color:var(--accent)}
 @media (max-width:520px){.flow{grid-template-columns:1fr}}
 
 /* contact */
+/* for clients */
+.aud{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:860px){.aud{grid-template-columns:1fr}}
+.aud .card{padding:28px;display:flex;flex-direction:column}
+.aud .label{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 12px;margin-bottom:12px;align-self:flex-start}
+.aud h3{font-size:21px}
+.aud h4{font-size:14px;margin:20px 0 6px;color:var(--ink)}
+.check{list-style:none;margin:0;padding:0;font-size:15px;color:var(--muted)}
+.check li{position:relative;padding-left:1.5em;margin:4px 0}
+.check li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.aud .proof{margin-top:20px;font-size:14px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted)}
+.aud .proof strong{color:var(--ink)}
+.aud .btn{margin-top:20px;align-self:flex-start}
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media (max-width:860px){.promise{grid-template-columns:1fr}}
+.promise .card h3{font-size:16px}
+/* faq */
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;position:relative;padding-right:28px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:0;color:var(--accent);font-family:Inter,sans-serif;font-size:20px;line-height:1.4}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:10px 0 0;color:var(--muted);font-size:15px}
+
 .contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
 .contact p{color:var(--muted)}
 .contact dl{display:inline-grid;grid-template-columns:auto auto;gap:6px 20px;text-align:left;margin:8px auto 28px;font-size:15px}
@@ -119,6 +143,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
   <div class="wrap">
     <a class="logo en" href="#">K.K</a>
     <nav class="links">
+      <a href="#for-clients">ご依頼の方へ</a>
       <a href="#strengths">強み</a>
       <a href="#services">できること</a>
       <a href="#works">実績</a>
@@ -134,11 +159,11 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
     <div class="eyebrow en">PROJECT MANAGER / UPSTREAM SE / WEB DEVELOPER</div>
     <h1>要件があいまいな段階から、<br>リリース後の運用まで。</h1>
     <p class="lead">
-      PM・上流SEとして17年、28案件に携わってきました。顧客ヒアリングと要件定義、ベンダーや社内チームとの調整を得意とし、必要なら設計・実装まで自分で手を動かします。業務システム、Webサイト構築、生成AIを使った業務効率化、エンジニア組織づくりまでご相談いただけます。
+      ホームページを作りたい、手作業の多い業務をシステムで楽にしたい。そんな企業や個人の方のご相談を、ITの専門知識がなくても大丈夫なように、やりたいことの整理から一緒に進めます。PM・上流SEとして17年、28案件の経験があり、開発チームのPMや技術顧問としての参画もお受けしています。
     </p>
     <div class="cta">
-      <a class="btn" href="#contact">お仕事の相談をする</a>
-      <a class="btn ghost" href="#works">実績を見る</a>
+      <a class="btn" href="#contact">無料で相談する</a>
+      <a class="btn ghost" href="#for-clients">ご依頼の方へ</a>
     </div>
 
     <div class="stats">
@@ -148,6 +173,62 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <div class="stat"><div class="v num">30→15<small>%</small></div><div class="k">VPoEとして離職率を半減</div></div>
     </div>
   </div>
+
+  <section id="for-clients">
+    <div class="wrap">
+      <div class="eyebrow en">FOR CLIENTS</div>
+      <h2>こんなお悩みはありませんか？</h2>
+      <p class="intro">「何から頼めばいいかわからない」段階からで構いません。目的をうかがって、必要なものだけをご提案します。</p>
+      <div class="aud">
+        <div class="card">
+          <span class="label">ホームページを作りたい方</span>
+          <h3>会社やお店、個人の活動を、<br>伝わるホームページに。</h3>
+          <ul class="check">
+            <li>ホームページがない、または古いまま更新できていない</li>
+            <li>作ったものの、問い合わせや採用応募につながらない</li>
+            <li>制作会社に頼みたいが、何を伝えればいいかわからない</li>
+            <li>公開した後の更新や管理まで任せたい</li>
+          </ul>
+          <h4>お任せいただけること</h4>
+          <ul class="check">
+            <li>サイトの目的と構成の整理、ページ構成案の作成</li>
+            <li>デザインのディレクション、制作（WordPressにも対応）</li>
+            <li>ドメイン、サーバー、メールの設定</li>
+            <li>検索で見つけてもらうための対策（SEO）、アクセス解析の設定</li>
+            <li>公開後の更新、保守、改善のご提案</li>
+          </ul>
+          <div class="proof"><strong>実績：</strong>コーポレートサイトを予定どおりの工期で納品し、保守契約も継続受注。メディアサイトでは公開3か月で4,500UUを達成しました。</div>
+          <a class="btn" href="#contact">ホームページの相談をする</a>
+        </div>
+        <div class="card">
+          <span class="label">システムを導入したい方</span>
+          <h3>Excelや紙、手作業の業務を、<br>仕組みで楽に。</h3>
+          <ul class="check">
+            <li>Excel・紙・メールでの手作業が多く、ミスや手間が減らない</li>
+            <li>システムを入れたいが、何を選べばいいかわからない</li>
+            <li>開発会社の見積もりや提案が妥当か判断できない</li>
+            <li>生成AIを業務に取り入れたいが、進め方がわからない</li>
+          </ul>
+          <h4>お任せいただけること</h4>
+          <ul class="check">
+            <li>業務のヒアリングと課題の整理、やるべきことの優先順位づけ</li>
+            <li>既製サービスか開発かの比較検討、ツールの選定</li>
+            <li>要件定義書の作成、開発会社とのやりとりや見積もり確認の代行</li>
+            <li>小さな自動化ツールの開発（Googleスプレッドシート、Pythonなど）</li>
+            <li>導入後の定着支援、運用改善</li>
+          </ul>
+          <div class="proof"><strong>実績：</strong>受発注業務で仕入先選定・価格回答・納期回答を自動化し、対象業務の手作業を約30〜40%削減する見込み。開発会社との仕様・費用交渉も担当しました。</div>
+          <a class="btn" href="#contact">システムの相談をする</a>
+        </div>
+      </div>
+
+      <div class="promise">
+        <div class="card"><h3>専門用語を使わずにご説明します</h3><p>ITに詳しくない方にもわかる言葉で、選択肢とそれぞれのメリット・デメリットをお伝えします。</p></div>
+        <div class="card"><h3>必要以上のものはおすすめしません</h3><p>まずは小さく始めて効果を確かめる進め方を基本にしています。既製サービスで足りる場合は、そうお伝えします。</p></div>
+        <div class="card"><h3>作って終わりにしません</h3><p>公開・導入後の更新、保守、改善のご相談まで、継続してお付き合いします。</p></div>
+      </div>
+    </div>
+  </section>
 
   <section id="strengths">
     <div class="wrap">
@@ -340,12 +421,27 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <div class="eyebrow en">FAQ</div>
+      <h2>よくあるご質問</h2>
+      <div class="faq">
+        <details><summary>ITやWebの知識がまったくないのですが、相談できますか？</summary><p>もちろんです。「こんなことに困っている」「こうなったらいいな」をそのままお話しください。必要なことはこちらで整理して、わかりやすくご説明します。</p></details>
+        <details><summary>費用はどのくらいかかりますか？</summary><p>内容や規模によって変わるため、ヒアリングのあとにお見積もりをお出しします。ご予算に合わせて、優先度の高いものから段階的に進める方法もご提案できます。ご相談とお見積もりは無料です。</p></details>
+        <details><summary>小さな依頼でもお願いできますか？</summary><p>はい。ホームページの一部修正や、スプレッドシートを使った簡単な自動化など、小さなご依頼からお受けしています。</p></details>
+        <details><summary>すでに付き合いのある制作会社・開発会社がいます。</summary><p>その場合は、発注側の立場で要件の整理、見積もりや提案内容の確認、進捗管理をお手伝いします。専門家が間に入ることで、認識のずれや追加費用を防ぎやすくなります。</p></details>
+        <details><summary>遠方でも依頼できますか？</summary><p>オンライン（Google Meet、Zoomなど）で全国から対応しています。東京都・埼玉県周辺であれば、打ち合わせに伺うこともできます。</p></details>
+        <details><summary>公開・導入した後のサポートはありますか？</summary><p>更新作業、保守、不具合対応、アクセス解析をもとにした改善のご提案まで、継続してサポートします。</p></details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
       <div class="contact">
         <div class="eyebrow en">CONTACT</div>
         <h2>お仕事のご相談</h2>
-        <p>案件の大小にかかわらず、まずはお気軽にご連絡ください。</p>
+        <p>ホームページ制作、システム導入、PM・技術顧問としての参画など、案件の大小にかかわらずお気軽にご連絡ください。ご相談とお見積もりは無料です。</p>
         <dl>
           <dt>稼働開始</dt><dd>2027年1月〜</dd>
           <dt>稼働日数</dt><dd>週1〜4日（応相談）</dd>
