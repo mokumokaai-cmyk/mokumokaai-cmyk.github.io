@@ -59,6 +59,7 @@ section h2{font-size:26px;margin:6px 0 12px}
 section .intro{color:var(--muted);margin:0 0 36px;max-width:680px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid2 > .wide{grid-column:1/-1}
 @media (max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
 .card h3{font-size:18px;margin:0 0 8px;line-height:1.5}
@@ -149,7 +150,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
   <div class="wrap hero">
     <h1>要件があいまいな段階から、<br>リリース後の運用まで。</h1>
     <p class="lead">
-      ホームページを作りたい、手作業の多い業務をシステムで楽にしたい。そんな企業や個人の方のご相談を、ITの専門知識がなくても大丈夫なように、やりたいことの整理から一緒に進めます。PM・上流SEとして17年、28案件の経験があり、開発チームのPMや技術顧問としての参画もお受けしています。
+      ホームページを作りたい、手作業の多い業務をシステムで楽にしたい、新しいサービスを立ち上げたい。そんな企業や個人の方のご相談を、ITの専門知識がなくても大丈夫なように、やりたいことの整理から一緒に進めます。PM・上流SEとして17年、28案件の経験があり、新規サービスの企画やマーケティングから、開発チームのPM、技術顧問まで対応します。
     </p>
     <div class="cta">
       <a class="btn" href="#contact">無料で相談する</a>
@@ -221,23 +222,28 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 
   <section id="strengths">
     <div class="wrap">
-      <h2>3つの強み</h2>
+      <h2>4つの強み</h2>
       <p class="intro">「話が通じる技術者」として、ビジネス側と開発側のあいだに立ちます。</p>
-      <div class="grid3">
+      <div class="grid2">
         <div class="card">
           <div class="idx">01</div>
+          <h3>新規サービスの立ち上げ経験が豊富</h3>
+          <p>教育サービス、マッチングサイト、メディア、Webアプリなど、ゼロからの立ち上げを数多く経験してきました。開発だけでなく、企画、事業計画、集客やSEOなどのマーケティング、営業まで一緒に考えます。</p>
+        </div>
+        <div class="card">
+          <div class="idx">02</div>
           <h3>上流工程と合意形成</h3>
           <p>現場ヒアリングで課題を洗い出し、優先度をつけて要件に落とし込みます。顧客・ベンダー・社内部門の調整、仕様と費用の交渉まで担当します。</p>
         </div>
         <div class="card">
-          <div class="idx">02</div>
+          <div class="idx">03</div>
           <h3>手を動かせるPM</h3>
-          <p>Java・PHP・JavaScriptでの開発経験があり、設計レビューやコードレビュー、技術選定を自分で行えます。60機能中およそ半数を自ら実装した案件もあります。</p>
+          <p>Java・PHP・JavaScriptでの開発経験があり、設計レビューやコードレビュー、技術選定を自分で行えます。Vercel・SupabaseなどのクラウドサービスとAIコーディングを使い、Webアプリを1人で作り上げることもできます。</p>
         </div>
         <div class="card">
-          <div class="idx">03</div>
-          <h3>生成AI・自動化での効率化</h3>
-          <p>プロンプト設計、AIを組み込んだ運用フロー、スクレイピングや機械学習を使ったデータ活用など、少人数でも回る仕組みを作ります。</p>
+          <div class="idx">04</div>
+          <h3>生成AIを使った効率化</h3>
+          <p>Claude CodeやChatGPTを使った開発、プロンプト設計、AIを組み込んだ運用フローなど、少人数でも速く、継続して回る仕組みを作ります。</p>
         </div>
       </div>
     </div>
@@ -248,6 +254,15 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>ご依頼いただけること</h2>
       <p class="intro">プロジェクト単位での参画も、特定の工程だけのスポット支援も対応します。</p>
       <div class="grid2">
+        <div class="card wide">
+          <h3>新規サービスの立ち上げ支援（企画・マーケティング）</h3>
+          <ul>
+            <li>サービスコンセプトの整理、事業計画・収益モデルの検討</li>
+            <li>MVP（最小限の機能）の定義と、小さく作って早く検証する進め方の設計</li>
+            <li>集客・SEO・SNSなどのマーケティング施策、料金プランの設計</li>
+            <li>Vercel・Supabaseなどを使ったプロトタイプやWebアプリの開発</li>
+          </ul>
+        </div>
         <div class="card">
           <h3>PM・PMO／要件定義支援</h3>
           <ul>
@@ -288,6 +303,16 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
     <div class="wrap">
       <h2>主な実績</h2>
       <p class="intro">守秘義務の範囲で一部を抜粋しています。</p>
+
+      <article class="case">
+        <div class="meta"><b>2026年10月〜</b>個人開発／企画〜開発</div>
+        <div>
+          <h3>ビール記録Webアプリの開発</h3>
+          <p>飲んだビールを記録できるWebアプリを、企画から設計、開発、インフラ構築まで1人で手がけました。Claude CodeとChatGPTを開発に取り入れ、少ない工数で形にしています。</p>
+          <div class="result">2026年10月に着手し、<strong>短期間で完成</strong>。Vercel・Supabase・Cloudflareを組み合わせ、サーバーを自前で持たずに運用できる構成にしました</div>
+          <div class="tags"><span class="tag">サービス企画</span><span class="tag">Vercel</span><span class="tag">Supabase</span><span class="tag">Cloudflare（ストレージ）</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span></div>
+        </div>
+      </article>
 
       <article class="case">
         <div class="meta"><b>2026年〜</b>SE／3名チーム</div>
@@ -361,9 +386,10 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
         <div class="skillrow"><h4>フレームワーク</h4><div><span class="pill lv3">Spring Boot</span><span class="pill">Spring Framework</span><span class="pill">Struts / Struts2</span><span class="pill">MyBatis</span><span class="pill">WordPress</span><span class="pill">Laravel</span><span class="pill">Vue / React</span><span class="pill">Next.js</span></div></div>
         <div class="skillrow"><h4>DB</h4><div><span class="pill lv3">PostgreSQL</span><span class="pill lv3">MySQL</span><span class="pill">MariaDB</span><span class="pill">Oracle</span><span class="pill">SQL Server</span></div></div>
         <div class="skillrow"><h4>インフラ・ミドルウェア</h4><div><span class="pill lv3">Apache</span><span class="pill lv3">Tomcat</span><span class="pill">nginx</span><span class="pill">RHEL / CentOS / AlmaLinux</span><span class="pill">AWS（RDS・SNS・Lambda）</span><span class="pill">Azure VM</span></div></div>
+        <div class="skillrow"><h4>クラウドサービス</h4><div><span class="pill">Vercel</span><span class="pill">Supabase</span><span class="pill">Cloudflare（ストレージ）</span></div></div>
         <div class="skillrow"><h4>開発・管理ツール</h4><div><span class="pill lv3">Git / GitLab</span><span class="pill lv3">Jenkins</span><span class="pill lv3">Redmine</span><span class="pill lv3">SVN</span><span class="pill">Backlog</span><span class="pill">Asana</span><span class="pill">Salesforce</span></div></div>
-        <div class="skillrow"><h4>AI・データ</h4><div><span class="pill">生成AIプロンプト設計</span><span class="pill">LightGBM</span><span class="pill">XGBoost</span><span class="pill">scikit-learn</span><span class="pill">Optuna</span><span class="pill">Selenium</span></div></div>
-        <div class="skillrow"><h4>Web・マーケティング</h4><div><span class="pill">SEO（キーワード調査・内部対策）</span><span class="pill">GA4</span><span class="pill">Search Console</span><span class="pill">ドメイン・DNS・SMTP設定</span></div></div>
+        <div class="skillrow"><h4>AI・データ</h4><div><span class="pill">Claude Code</span><span class="pill">ChatGPT</span><span class="pill">生成AIプロンプト設計</span><span class="pill">LightGBM</span><span class="pill">XGBoost</span><span class="pill">scikit-learn</span><span class="pill">Optuna</span><span class="pill">Selenium</span></div></div>
+        <div class="skillrow"><h4>企画・マーケティング</h4><div><span class="pill">新規サービス企画</span><span class="pill">事業計画・料金プラン設計</span><span class="pill">SEO（キーワード調査・内部対策）</span><span class="pill">GA4</span><span class="pill">Search Console</span><span class="pill">ドメイン・DNS・SMTP設定</span></div></div>
         <div class="skillrow"><h4>資格</h4><div><span class="pill">情報セキュリティマネジメント</span></div></div>
       </div>
     </div>
