@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K.K | PM・上流工程・Web開発</title>
+<meta name="description" content="要件定義からリリース・運用まで一貫して担う、PM／上流SE。開発17年・28案件。Web開発、業務システム、生成AI活用、組織づくりまで対応します。">
+<meta property="og:title" content="K.K | PM・上流工程・Web開発">
+<meta property="og:description" content="要件定義からリリース・運用まで一貫して担う、PM／上流SE。開発17年・28案件。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#1c1d1f; --muted:#5d6168; --line:#e3e1da;
+  --accent:#1f5f8b; --accent-soft:#e6eff5; --accent-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#141518; --surface:#1c1e22; --ink:#ecebe7; --muted:#a3a7ae; --line:#2e3137;
+    --accent:#6fb0dc; --accent-soft:#1d2a33; --accent-ink:#0f1215;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.num,.en{font-family:Inter,"Noto Sans JP",sans-serif}
+
+/* header */
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+nav.links{display:flex;gap:22px;font-size:14px}
+nav.links a{color:var(--muted);text-decoration:none}
+nav.links a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;font-size:15px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.sm{padding:8px 14px;font-size:13px}
+@media (max-width:760px){nav.links{display:none}}
+
+/* hero */
+.hero{padding:88px 0 64px}
+.eyebrow{font-size:13px;letter-spacing:.12em;color:var(--accent);font-weight:700}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.4;margin:12px 0 20px;letter-spacing:.01em}
+.hero p.lead{color:var(--muted);max-width:640px;margin:0 0 32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:56px}
+.stat{background:var(--surface);padding:20px}
+.stat .v{font-size:30px;font-weight:700;line-height:1.2}
+.stat .v small{font-size:15px;margin-left:2px}
+.stat .k{font-size:13px;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:26px;margin:6px 0 12px}
+section .intro{color:var(--muted);margin:0 0 36px;max-width:680px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+.card h3{font-size:18px;margin:0 0 8px;line-height:1.5}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card ul{margin:10px 0 0;padding-left:1.1em;color:var(--muted);font-size:15px}
+.idx{font-family:Inter,sans-serif;font-size:13px;color:var(--accent);font-weight:700}
+
+/* cases */
+.case{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.case:last-child{border-bottom:0}
+.case .meta{font-size:13px;color:var(--muted)}
+.case .meta b{display:block;color:var(--ink);font-size:14px}
+.case h3{margin:0 0 8px;font-size:19px}
+.case p{margin:0 0 10px;color:var(--muted);font-size:15px}
+.result{background:var(--accent-soft);border-radius:8px;padding:12px 16px;font-size:15px}
+.result strong{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted);background:var(--surface)}
+@media (max-width:760px){.case{grid-template-columns:1fr;gap:8px}}
+
+/* timeline */
+details.history{margin-top:24px}
+details.history summary{cursor:pointer;font-weight:700;color:var(--accent)}
+.tl{list-style:none;margin:20px 0 0;padding:0}
+.tl li{display:grid;grid-template-columns:170px 1fr auto;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.tl .p{color:var(--muted);font-family:Inter,sans-serif;font-size:14px}
+.tl .r{font-size:13px;color:var(--muted)}
+@media (max-width:760px){.tl li{grid-template-columns:1fr}}
+
+/* skills */
+.skillrow{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.skillrow:last-child{border-bottom:0}
+.skillrow h4{margin:0;font-size:14px;color:var(--muted);font-weight:500}
+.pill{display:inline-block;font-size:13px;padding:3px 10px;margin:0 6px 6px 0;border-radius:6px;background:var(--surface);border:1px solid var(--line)}
+.pill.lv3{border-color:var(--accent);color:var(--accent);font-weight:700}
+.legend{font-size:13px;color:var(--muted);margin-top:12px}
+@media (max-width:760px){.skillrow{grid-template-columns:1fr;gap:6px}}
+
+/* flow */
+.flow{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.flow .card{position:relative}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.flow{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
+.contact p{color:var(--muted)}
+.contact dl{display:inline-grid;grid-template-columns:auto auto;gap:6px 20px;text-align:left;margin:8px auto 28px;font-size:15px}
+.contact dt{color:var(--muted)}
+.contact dd{margin:0}
+footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo en" href="#">K.K</a>
+    <nav class="links">
+      <a href="#strengths">強み</a>
+      <a href="#services">できること</a>
+      <a href="#works">実績</a>
+      <a href="#skills">スキル</a>
+      <a href="#flow">進め方</a>
+    </nav>
+    <a class="btn sm" href="#contact">相談する</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="eyebrow en">PROJECT MANAGER / UPSTREAM SE / WEB DEVELOPER</div>
+    <h1>要件があいまいな段階から、<br>リリース後の運用まで。</h1>
+    <p class="lead">
+      PM・上流SEとして17年、28案件に携わってきました。顧客ヒアリングと要件定義、ベンダーや社内チームとの調整を得意とし、必要なら設計・実装まで自分で手を動かします。業務システム、Webサイト構築、生成AIを使った業務効率化、エンジニア組織づくりまでご相談いただけます。
+    </p>
+    <div class="cta">
+      <a class="btn" href="#contact">お仕事の相談をする</a>
+      <a class="btn ghost" href="#works">実績を見る</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="v num">17<small>年</small></div><div class="k">IT実務経験</div></div>
+      <div class="stat"><div class="v num">28<small>件</small></div><div class="k">参画プロジェクト</div></div>
+      <div class="stat"><div class="v num">15<small>名+</small></div><div class="k">チームマネジメント</div></div>
+      <div class="stat"><div class="v num">30→15<small>%</small></div><div class="k">VPoEとして離職率を半減</div></div>
+    </div>
+  </div>
+
+  <section id="strengths">
+    <div class="wrap">
+      <div class="eyebrow en">STRENGTHS</div>
+      <h2>3つの強み</h2>
+      <p class="intro">「話が通じる技術者」として、ビジネス側と開発側のあいだに立ちます。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="idx">01</div>
+          <h3>上流工程と合意形成</h3>
+          <p>現場ヒアリングで課題を洗い出し、優先度をつけて要件に落とし込みます。顧客・ベンダー・社内部門の調整、仕様と費用の交渉まで担当します。</p>
+        </div>
+        <div class="card">
+          <div class="idx">02</div>
+          <h3>手を動かせるPM</h3>
+          <p>Java・PHP・JavaScriptでの開発経験があり、設計レビューやコードレビュー、技術選定を自分で行えます。60機能中およそ半数を自ら実装した案件もあります。</p>
+        </div>
+        <div class="card">
+          <div class="idx">03</div>
+          <h3>生成AI・自動化での効率化</h3>
+          <p>プロンプト設計、AIを組み込んだ運用フロー、スクレイピングや機械学習を使ったデータ活用など、少人数でも回る仕組みを作ります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="eyebrow en">SERVICES</div>
+      <h2>ご依頼いただけること</h2>
+      <p class="intro">プロジェクト単位での参画も、特定の工程だけのスポット支援も対応します。</p>
+      <div class="grid2">
+        <div class="card">
+          <h3>PM・PMO／要件定義支援</h3>
+          <ul>
+            <li>業務ヒアリング、課題整理、要件定義書の作成</li>
+            <li>WBS・見積もり作成、MVPを前提にしたフェーズ分け</li>
+            <li>ベンダー管理、仕様・費用の調整、受け入れ試験</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Webサイト・Webシステム開発</h3>
+          <ul>
+            <li>コーポレートサイト、採用サイト、メディアの構築</li>
+            <li>WordPressのテーマ開発、SEOの内部対策、GA4・Search Consoleの設定</li>
+            <li>Laravel・Spring Bootなどによる業務システムの開発・保守</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>生成AI・業務自動化</h3>
+          <ul>
+            <li>記事生成など、コンテンツ制作用プロンプトの設計と運用フロー作り</li>
+            <li>手作業の自動化（GAS、Python、スクレイピング）</li>
+            <li>BIや帳票自動化の実現可能性の調査</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>技術顧問・エンジニア組織づくり</h3>
+          <ul>
+            <li>技術戦略、ロードマップの策定</li>
+            <li>評価制度の設計、1on1の仕組み化、採用要件の定義</li>
+            <li>PL・新人の育成、レビュー体制の整備</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="wrap">
+      <div class="eyebrow en">WORKS</div>
+      <h2>主な実績</h2>
+      <p class="intro">守秘義務の範囲で一部を抜粋しています。</p>
+
+      <article class="case">
+        <div class="meta"><b>2026年〜</b>SE／3名チーム</div>
+        <div>
+          <h3>受発注システムの保守開発と業務改善</h3>
+          <p>顧客ヒアリングから要件定義、影響調査、受け入れ試験、顧客への説明までを一貫して担当。開発ベンダーと仕様・スケジュール・費用を調整し、価格交渉も行いました。</p>
+          <div class="result">仕入先選定・価格回答・納期回答を自動化し、対象業務の手作業を<strong>約30〜40%削減</strong>する見込み</div>
+          <div class="tags"><span class="tag">要件定義</span><span class="tag">ベンダー調整</span><span class="tag">Python</span><span class="tag">Amazon QuickSight 調査</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta"><b>2025年</b>PM・SE／3名チーム</div>
+        <div>
+          <h3>キュレーションサイト5件の立ち上げと運用</h3>
+          <p>キーワード調査と競合分析をもとにサイト構成を提案。WordPressのテーマ構築、サーバーやDNSの設定、記事生成プロンプトの設計まで担当しました。</p>
+          <div class="result">公開から3か月で<strong>4,500UU</strong>。AIを組み込んだ運用フローで、少人数でも継続して更新できる体制を作りました</div>
+          <div class="tags"><span class="tag">SEO</span><span class="tag">WordPress</span><span class="tag">生成AI</span><span class="tag">nginx / MariaDB</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta"><b>2025年</b>PM／3名チーム</div>
+        <div>
+          <h3>中小企業向けコーポレートサイト開発</h3>
+          <p>要件定義、ワイヤーフレーム作成、デザインディレクション、ドメイン・サーバー・解析ツールの設定、テスト計画を担当しました。</p>
+          <div class="result">予定どおりの工期で納品し、<strong>保守契約を継続受注</strong>。生成AIを使ったコンテンツ制作フローも提案・導入しました</div>
+          <div class="tags"><span class="tag">ディレクション</span><span class="tag">Next.js</span><span class="tag">GitLab</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta"><b>2023〜2024年</b>VPoE</div>
+        <div>
+          <h3>技術統括責任者としての組織づくり</h3>
+          <p>経営陣の直下で、技術戦略、評価制度の改定、採用、複数プロジェクトの統括、請負案件の顧客折衝を担当しました。</p>
+          <div class="result">評価制度の刷新と1on1の定例化により、エンジニアの<strong>離職率を30%から15%に半減</strong>。採用プロセスを見直し、内定率も向上しました</div>
+          <div class="tags"><span class="tag">技術戦略</span><span class="tag">評価制度</span><span class="tag">採用</span><span class="tag">プロジェクト統括</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta"><b>2019〜2022年</b>PM兼PL・SE、事業責任者／15名</div>
+        <div>
+          <h3>オンラインプログラミング教育サービスの立ち上げと運営</h3>
+          <p>企画、要件定義、設計、バックエンド開発（Java / Spring Boot）までを主導。リリース後は事業責任者として、事業計画、予算、講師管理、法人営業も担当しました。</p>
+          <div class="result">計画どおりのスケジュールでサービスを公開。法人の導入先を増やし、<strong>受講者の学習達成率と満足度も向上</strong>しました</div>
+          <div class="tags"><span class="tag">新規事業</span><span class="tag">Spring Boot</span><span class="tag">Vue</span><span class="tag">AWS</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta"><b>2022〜2024年</b>PM兼PL／4名</div>
+        <div>
+          <h3>レジュメWeb管理システムの構築と運用保守</h3>
+          <p>企画から要件定義、設計、レビュー、リリース、運用改善までを担当。PLと新卒メンバーの育成も行いました。</p>
+          <div class="result">Googleアカウント認証（OAuth2）の導入とUI改善で、<strong>使いやすさとセキュリティを両立</strong>。Laravelは未経験から短期間で習得しました</div>
+          <div class="tags"><span class="tag">Laravel</span><span class="tag">MariaDB</span><span class="tag">育成</span></div>
+        </div>
+      </article>
+
+      <details class="history">
+        <summary>すべての経歴を見る（2009年〜）</summary>
+        <ul class="tl">
+          <li><span class="p">2026.05〜2026.12</span><span>受発注システム保守開発</span><span class="r">SE</span></li>
+          <li><span class="p">2025.05〜2025.08</span><span>中小企業向けコーポレートサイト開発</span><span class="r">PM・営業</span></li>
+          <li><span class="p">2025.01〜2025.12</span><span>キュレーションサイト構築・運用保守（5サイト）</span><span class="r">PM</span></li>
+          <li><span class="p">2025.01〜2025.06</span><span>機械学習による競馬予想ツール開発（個人開発）</span><span class="r">全工程</span></li>
+          <li><span class="p">2024.01〜2024.03</span><span>営業支援システム構築（Salesforce連携）</span><span class="r">PM</span></li>
+          <li><span class="p">2023.09〜2024.12</span><span>VPoE（技術統括責任者）</span><span class="r">VPoE</span></li>
+          <li><span class="p">2022.01〜2024.12</span><span>レジュメWeb管理システム構築・運用保守</span><span class="r">PM・PL</span></li>
+          <li><span class="p">2022.01〜2023.08</span><span>コーポレートサイト刷新・採用サイト新規構築</span><span class="r">PM</span></li>
+          <li><span class="p">2019.04〜2022.08</span><span>オンラインプログラミング教育サービス構築・運営</span><span class="r">PM・PL・SE</span></li>
+          <li><span class="p">2019.04〜2019.10</span><span>倉庫管理パッケージのカスタマイズ（2件）</span><span class="r">PM・PL</span></li>
+          <li><span class="p">2018.12〜2023.08</span><span>フリーランス案件マッチングサイト開発・運用保守</span><span class="r">PM・PL</span></li>
+          <li><span class="p">2018.10〜2019.10</span><span>ECサイト・社内システムの運用保守</span><span class="r">PL</span></li>
+          <li><span class="p">2018.08〜2018.11</span><span>就活生向けキュレーションサイト開発</span><span class="r">PL・SE</span></li>
+          <li><span class="p">2018.04〜2018.07</span><span>小売業向けシステムリプレイス（Spring Boot共通基盤）</span><span class="r">SE</span></li>
+          <li><span class="p">2017.12〜2018.03</span><span>ヘルスケアシステム開発（開発20名への仕様伝達）</span><span class="r">SE</span></li>
+          <li><span class="p">2016.10〜2017.11</span><span>Web明細システム開発</span><span class="r">サブリーダー</span></li>
+          <li><span class="p">2016.07〜2016.09</span><span>VPN管理システム開発</span><span class="r">サブリーダー</span></li>
+          <li><span class="p">2009.07〜2016.09</span><span>半導体SCM、BIツール、金融モック、不動産サイトなど11案件</span><span class="r">SE・PG</span></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="eyebrow en">SKILLS</div>
+      <h2>スキル</h2>
+      <p class="intro">太字は実務で特に多く使ってきたものです。</p>
+      <div class="card">
+        <div class="skillrow"><h4>言語</h4><div><span class="pill lv3">Java</span><span class="pill lv3">JavaScript</span><span class="pill lv3">SQL</span><span class="pill lv3">HTML / CSS</span><span class="pill">PHP</span><span class="pill">Google Apps Script</span><span class="pill">VBA</span><span class="pill">Python</span><span class="pill">TypeScript</span><span class="pill">C#</span></div></div>
+        <div class="skillrow"><h4>フレームワーク</h4><div><span class="pill lv3">Spring Boot</span><span class="pill">Spring Framework</span><span class="pill">Struts / Struts2</span><span class="pill">MyBatis</span><span class="pill">WordPress</span><span class="pill">Laravel</span><span class="pill">Vue / React</span><span class="pill">Next.js</span></div></div>
+        <div class="skillrow"><h4>DB</h4><div><span class="pill lv3">PostgreSQL</span><span class="pill lv3">MySQL</span><span class="pill">MariaDB</span><span class="pill">Oracle</span><span class="pill">SQL Server</span></div></div>
+        <div class="skillrow"><h4>インフラ・ミドルウェア</h4><div><span class="pill lv3">Apache</span><span class="pill lv3">Tomcat</span><span class="pill">nginx</span><span class="pill">RHEL / CentOS / AlmaLinux</span><span class="pill">AWS（RDS・SNS・Lambda）</span><span class="pill">Azure VM</span></div></div>
+        <div class="skillrow"><h4>開発・管理ツール</h4><div><span class="pill lv3">Git / GitLab</span><span class="pill lv3">Jenkins</span><span class="pill lv3">Redmine</span><span class="pill lv3">SVN</span><span class="pill">Backlog</span><span class="pill">Asana</span><span class="pill">Salesforce</span></div></div>
+        <div class="skillrow"><h4>AI・データ</h4><div><span class="pill">生成AIプロンプト設計</span><span class="pill">LightGBM</span><span class="pill">XGBoost</span><span class="pill">scikit-learn</span><span class="pill">Optuna</span><span class="pill">Selenium</span></div></div>
+        <div class="skillrow"><h4>Web・マーケティング</h4><div><span class="pill">SEO（キーワード調査・内部対策）</span><span class="pill">GA4</span><span class="pill">Search Console</span><span class="pill">ドメイン・DNS・SMTP設定</span></div></div>
+        <div class="skillrow"><h4>資格</h4><div><span class="pill">情報セキュリティマネジメント</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <div class="eyebrow en">FLOW</div>
+      <h2>ご依頼の流れ</h2>
+      <p class="intro">「まだ要件が固まっていない」段階でもお気軽にご相談ください。</p>
+      <div class="flow">
+        <div class="card"><div class="idx">STEP 1</div><h3>ご相談</h3><p>フォームかメールで、現状の課題や実現したいことをお知らせください。</p></div>
+        <div class="card"><div class="idx">STEP 2</div><h3>ヒアリング</h3><p>オンラインで30〜60分ほどお話を伺い、論点を整理します。</p></div>
+        <div class="card"><div class="idx">STEP 3</div><h3>ご提案・お見積もり</h3><p>進め方、体制、スケジュール、費用をまとめてご提示します。</p></div>
+        <div class="card"><div class="idx">STEP 4</div><h3>着手</h3><p>定例ミーティングと進捗共有を行いながら進めます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="eyebrow en">CONTACT</div>
+        <h2>お仕事のご相談</h2>
+        <p>案件の大小にかかわらず、まずはお気軽にご連絡ください。</p>
+        <dl>
+          <dt>稼働開始</dt><dd>2027年1月〜</dd>
+          <dt>稼働日数</dt><dd>週1〜4日（応相談）</dd>
+          <dt>働き方</dt><dd>フルリモート（東京都・埼玉県周辺への出社も可）</dd>
+          <dt>契約形態</dt><dd>準委任・請負</dd>
+        </dl>
+        <div class="cta" style="justify-content:center">
+          <a class="btn" href="mailto:moku.kyo@gmail.com?subject=%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">メールで相談する</a>
+        </div>
+        <p style="margin:16px 0 0;font-size:14px">moku.kyo@gmail.com</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© K.K</div>
+</footer>
+
+</body>
+</html>
