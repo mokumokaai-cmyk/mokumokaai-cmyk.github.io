@@ -3,420 +3,502 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>K.K | PM・上流工程・Web開発</title>
-<meta name="description" content="ホームページ制作から業務システムの導入まで、やりたいことの整理から一緒に進めます。PM・上流SEとして17年・28案件の経験があります。ご相談・お見積もりは無料です。">
-<meta property="og:title" content="K.K | PM・上流工程・Web開発">
-<meta property="og:description" content="要件定義からリリース・運用まで一貫して担う、PM／上流SE。開発17年・28案件。">
+<meta name="color-scheme" content="light">
+<title>K.K | ホームページ制作・業務効率化・新規サービス立ち上げの相談相手</title>
+<meta name="description" content="個人事業主・小さな会社のITの相談相手。ホームページ制作、手作業を減らす仕組みづくり、新しいサービスの立ち上げまで、「何から始めれば？」から一緒に進めます。ご相談・お見積もりは無料です。">
+<meta property="og:title" content="K.K | ITのことを気軽に相談できるパートナー">
+<meta property="og:description" content="ホームページ制作、業務の効率化、新規サービスの立ち上げまで。IT歴17年の経験で、やりたいことの整理から一緒に進めます。">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f6f2; --surface:#ffffff; --ink:#1c1d1f; --muted:#5d6168; --line:#e3e1da;
-  --accent:#1f5f8b; --accent-soft:#e6eff5; --accent-ink:#ffffff;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#141518; --surface:#1c1e22; --ink:#ecebe7; --muted:#a3a7ae; --line:#2e3137;
-    --accent:#6fb0dc; --accent-soft:#1d2a33; --accent-ink:#0f1215;
-  }
+  --bg:#fcf9f4; --bg-alt:#f5efe5; --surface:#ffffff; --ink:#2f2c28; --muted:#6b655d; --line:#ebe3d6;
+  --accent:#e2703a; --accent-dark:#c65a26; --accent-soft:#fdeee4;
+  --green:#3d7a63; --green-soft:#e6f1ec;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
-a{color:var(--accent)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-.num,.en{font-family:Inter,"Noto Sans JP",sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.round{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif}
+a{color:var(--accent-dark)}
+img,svg{display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:16px;box-shadow:0 6px 16px -6px rgba(226,112,58,.6);transition:background .15s,transform .15s}
+.btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn.ghost{background:var(--surface);color:var(--ink);border:2px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--accent);background:var(--surface)}
+.btn.sm{padding:8px 18px;font-size:14px}
 
 /* header */
-header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-weight:700;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
-nav.links{display:flex;gap:22px;font-size:14px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(252,249,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--ink);font-family:"Zen Maru Gothic",sans-serif}
+.logo .mark{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px}
+.logo small{font-size:12px;color:var(--muted);font-weight:500}
+nav.links{display:flex;gap:24px;font-size:14px}
 nav.links a{color:var(--muted);text-decoration:none}
-nav.links a:hover{color:var(--ink)}
-.btn{display:inline-block;padding:12px 22px;border-radius:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;font-size:15px}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.btn.sm{padding:8px 14px;font-size:13px}
-@media (max-width:760px){nav.links{display:none}}
+nav.links a:hover{color:var(--accent-dark)}
+@media (max-width:820px){nav.links{display:none}.logo small{display:none}}
 
 /* hero */
-.hero{padding:88px 0 64px}
-.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.4;margin:12px 0 20px;letter-spacing:.01em}
-.hero p.lead{color:var(--muted);max-width:640px;margin:0 0 32px}
+.hero{padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.tagline{display:inline-block;background:var(--green-soft);color:var(--green);font-weight:700;font-size:14px;border-radius:999px;padding:4px 16px}
+.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.45;margin:18px 0 18px}
+.hero h1 .nw{display:inline-block}
+@media (max-width:420px){.hero h1{font-size:26px}}
+.hero h1 .hl{background:linear-gradient(transparent 62%,#fbd8c3 62%)}
+.hero p.lead{color:var(--muted);font-size:17px;margin:0 0 30px}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:56px}
-.stat{background:var(--surface);padding:20px}
-.stat .v{font-size:30px;font-weight:700;line-height:1.2}
-.stat .v small{font-size:15px;margin-left:2px}
-.stat .k{font-size:13px;color:var(--muted)}
-@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:14px;color:var(--muted)}
+.badges span::before{content:"✓";color:var(--green);font-weight:700;margin-right:6px}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 20px 40px -24px rgba(80,60,30,.25);position:relative}
+.hero-card .avatar{width:84px;height:84px;margin-bottom:14px}
+.hero-card .name{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:20px}
+.hero-card .role{font-size:13px;color:var(--muted)}
+.bubble{margin-top:18px;background:var(--accent-soft);border-radius:18px;padding:16px 18px;font-size:15px;position:relative}
+.bubble::before{content:"";position:absolute;top:-8px;left:28px;border:8px solid transparent;border-top:0;border-bottom-color:var(--accent-soft)}
+.hero-card dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:18px 0 0;font-size:14px}
+.hero-card dt{color:var(--muted)}
+.hero-card dd{margin:0;font-weight:500}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:36px}.hero{padding:40px 0 56px}}
 
 /* sections */
-section{padding:72px 0;border-top:1px solid var(--line)}
-section h2{font-size:26px;margin:6px 0 12px}
-section .intro{color:var(--muted);margin:0 0 36px;max-width:680px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.grid2 > .wide{grid-column:1/-1}
+section{padding:80px 0}
+section.alt{background:var(--bg-alt)}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head h2{font-size:clamp(24px,3.6vw,32px);margin:0 0 10px;line-height:1.5}
+.sec-head p{color:var(--muted);margin:0 auto;max-width:620px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media (max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
-.card h3{font-size:18px;margin:0 0 8px;line-height:1.5}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.card ul{margin:10px 0 0;padding-left:1.1em;color:var(--muted);font-size:15px}
-.idx{font-family:Inter,sans-serif;font-size:13px;color:var(--accent);font-weight:700}
+
+/* worries */
+.worries{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.worry{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.worry .q{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent-dark);display:grid;place-items:center;font-weight:700;font-size:14px}
+.answer{text-align:center;margin-top:36px;font-family:"Zen Maru Gothic",sans-serif;font-size:clamp(19px,2.6vw,24px);font-weight:700}
+.answer em{font-style:normal;color:var(--accent-dark)}
+@media (max-width:860px){.worries{grid-template-columns:1fr}}
+
+/* services */
+.svc{display:flex;flex-direction:column}
+.svc .icon{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;margin-bottom:16px}
+.svc .icon svg{width:30px;height:30px}
+.svc h3{font-size:21px;margin:0 0 8px;line-height:1.5}
+.svc .desc{color:var(--muted);font-size:15px;margin:0 0 14px}
+.svc ul{list-style:none;padding:0;margin:0 0 16px;font-size:15px}
+.svc li{padding:6px 0 6px 26px;position:relative;border-top:1px dashed var(--line)}
+.svc li::before{content:"";position:absolute;left:4px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--green-soft);border:2px solid var(--green)}
+.svc .for{margin-top:auto;background:var(--bg-alt);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--muted)}
+.svc .for b{color:var(--ink)}
+.c-orange{background:var(--accent-soft);color:var(--accent-dark)}
+.c-green{background:var(--green-soft);color:var(--green)}
+.c-yellow{background:#fbf1d4;color:#a77a12}
+
+/* reasons */
+.reason{text-align:center}
+.reason .num{font-family:"Zen Maru Gothic",sans-serif;font-size:14px;font-weight:700;color:var(--accent-dark);letter-spacing:.08em}
+.reason h3{font-size:19px;margin:6px 0 10px}
+.reason p{margin:0;color:var(--muted);font-size:15px;text-align:left}
 
 /* cases */
-.case{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
-.case:last-child{border-bottom:0}
-.case .meta{font-size:13px;color:var(--muted)}
-.case .meta b{display:block;color:var(--ink);font-size:14px}
-.case h3{margin:0 0 8px;font-size:19px}
-.case p{margin:0 0 10px;color:var(--muted);font-size:15px}
-.result{background:var(--accent-soft);border-radius:8px;padding:12px 16px;font-size:15px}
-.result strong{color:var(--accent)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.tag{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted);background:var(--surface)}
-@media (max-width:760px){.case{grid-template-columns:1fr;gap:8px}}
+.case{display:flex;flex-direction:column}
+.case .kind{align-self:flex-start;font-size:12px;font-weight:700;border-radius:999px;padding:3px 12px;margin-bottom:12px}
+.case h3{font-size:19px;margin:0 0 8px;line-height:1.5}
+.case p{margin:0 0 16px;color:var(--muted);font-size:15px}
+.case .result{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.case .big{font-family:"Zen Maru Gothic",sans-serif;font-size:28px;font-weight:700;color:var(--accent-dark);line-height:1.2}
+.case .small{font-size:14px;color:var(--muted)}
 
+/* price */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.price .card h3{font-size:19px;margin:0 0 12px}
+.price ul{margin:0;padding-left:1.2em;color:var(--muted);font-size:15px}
+.price .free{background:var(--green);color:#fff;border:0}
+.price .free h3{color:#fff}
+.price .free p{margin:0 0 16px;opacity:.92}
+.price .free .btn{background:#fff;color:var(--green);box-shadow:none}
+@media (max-width:860px){.price{grid-template-columns:1fr}}
 
-/* skills */
-.skillrow{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
-.skillrow:last-child{border-bottom:0}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;position:relative}
+.step::before{counter-increment:st;content:counter(st);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;margin-bottom:12px;font-family:"Zen Maru Gothic",sans-serif}
+.step h3{font-size:17px;margin:0 0 6px}
+.step p{margin:0;color:var(--muted);font-size:14px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* profile */
+.profile{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start}
+.profile .side{text-align:center}
+.profile .side .avatar{width:160px;height:160px;margin:0 auto 14px}
+.profile .side .name{font-family:"Zen Maru Gothic",sans-serif;font-size:22px;font-weight:700}
+.profile .side .role{font-size:14px;color:var(--muted)}
+.profile p{margin:0 0 14px}
+.history{list-style:none;padding:0;margin:20px 0 0;border-left:3px solid var(--line)}
+.history li{position:relative;padding:0 0 16px 22px;font-size:15px}
+.history li::before{content:"";position:absolute;left:-8px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.history b{display:block;font-size:13px;color:var(--accent-dark)}
+@media (max-width:760px){.profile{grid-template-columns:1fr;gap:20px}}
+
+/* for companies */
+.biz .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.biz .stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center}
+.biz .stat .v{font-family:"Zen Maru Gothic",sans-serif;font-size:28px;font-weight:700;color:var(--green);line-height:1.3}
+.biz .stat .v small{font-size:15px}
+.biz .stat .k{font-size:13px;color:var(--muted)}
+@media (max-width:760px){.biz .stats{grid-template-columns:1fr 1fr}}
+.biz .card h3{font-size:18px;margin:0 0 8px}
+.biz .card p{margin:0;color:var(--muted);font-size:15px}
+details.skills{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 22px}
+details.skills summary{cursor:pointer;font-weight:700;color:var(--green)}
+.skillrow{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
+.skillrow:first-of-type{margin-top:14px}
 .skillrow h4{margin:0;font-size:14px;color:var(--muted);font-weight:500}
-.pill{display:inline-block;font-size:13px;padding:3px 10px;margin:0 6px 6px 0;border-radius:6px;background:var(--surface);border:1px solid var(--line)}
-.pill.lv3{border-color:var(--accent);color:var(--accent);font-weight:700}
-.legend{font-size:13px;color:var(--muted);margin-top:12px}
-@media (max-width:760px){.skillrow{grid-template-columns:1fr;gap:6px}}
+.pill{display:inline-block;font-size:13px;padding:2px 10px;margin:0 6px 6px 0;border-radius:999px;background:var(--bg-alt)}
+@media (max-width:760px){.skillrow{grid-template-columns:1fr;gap:4px}}
 
-/* flow */
-.flow{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.flow .card{position:relative}
-@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.flow{grid-template-columns:1fr}}
-
-/* contact */
-/* for clients */
-.aud{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-@media (max-width:860px){.aud{grid-template-columns:1fr}}
-.aud .card{padding:28px;display:flex;flex-direction:column}
-.aud .label{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 12px;margin-bottom:12px;align-self:flex-start}
-.aud h3{font-size:21px}
-.aud h4{font-size:14px;margin:20px 0 6px;color:var(--ink)}
-.check{list-style:none;margin:0;padding:0;font-size:15px;color:var(--muted)}
-.check li{position:relative;padding-left:1.5em;margin:4px 0}
-.check li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
-.aud .proof{margin-top:20px;font-size:14px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted)}
-.aud .proof strong{color:var(--ink)}
-.aud .btn{margin-top:20px;align-self:flex-start}
-.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-@media (max-width:860px){.promise{grid-template-columns:1fr}}
-.promise .card h3{font-size:16px}
 /* faq */
-.faq details{border-bottom:1px solid var(--line);padding:16px 0}
-.faq summary{cursor:pointer;font-weight:700;list-style:none;position:relative;padding-right:28px}
+.faq{max-width:780px;margin:0 auto}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 22px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;position:relative;padding-right:30px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:4px;top:0;color:var(--accent);font-family:Inter,sans-serif;font-size:20px;line-height:1.4}
+.faq summary::before{content:"Q.";color:var(--accent-dark);margin-right:8px;font-family:"Zen Maru Gothic",sans-serif}
+.faq summary::after{content:"+";position:absolute;right:0;top:-2px;color:var(--accent);font-size:22px}
 .faq details[open] summary::after{content:"−"}
 .faq details p{margin:10px 0 0;color:var(--muted);font-size:15px}
 
-.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
-.contact p{color:var(--muted)}
-.contact dl{display:inline-grid;grid-template-columns:auto auto;gap:6px 20px;text-align:left;margin:8px auto 28px;font-size:15px}
-.contact dt{color:var(--muted)}
-.contact dd{margin:0}
-footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
+/* contact */
+.contact{background:var(--accent);color:#fff;border-radius:32px;padding:56px 32px;text-align:center}
+.contact h2{font-size:clamp(24px,3.6vw,32px);margin:0 0 12px}
+.contact p{margin:0 auto 24px;max-width:560px;opacity:.95}
+.contact .btn{background:#fff;color:var(--accent-dark);box-shadow:none;font-size:17px;padding:16px 32px}
+.contact .mail{margin-top:14px;font-size:15px;opacity:.95}
+.contact dl{display:inline-grid;grid-template-columns:auto auto;gap:4px 18px;text-align:left;margin:28px auto 0;font-size:14px;background:rgba(255,255,255,.14);border-radius:16px;padding:16px 22px}
+.contact dt{opacity:.85}
+.contact dd{margin:0;font-weight:500}
+footer{padding:36px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="avatar" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="60" fill="#fdeee4"/>
+      <circle cx="60" cy="50" r="22" fill="#e2703a"/>
+      <path d="M22 104c6-20 22-30 38-30s32 10 38 30a60 60 0 0 1-76 0z" fill="#e2703a"/>
+      <text x="60" y="56" text-anchor="middle" font-family="Zen Maru Gothic, sans-serif" font-size="16" font-weight="700" fill="#fff">K.K</text>
+    </symbol>
+  </defs>
+</svg>
+
 <header class="top">
   <div class="wrap">
-    <a class="logo en" href="#">K.K</a>
+    <a class="logo" href="#"><span class="mark">K.K</span><span>K.K<br><small>ITの相談相手</small></span></a>
     <nav class="links">
-      <a href="#for-clients">ご依頼の方へ</a>
-      <a href="#strengths">強み</a>
       <a href="#services">できること</a>
-      <a href="#works">実績</a>
-      <a href="#skills">スキル</a>
-      <a href="#flow">進め方</a>
+      <a href="#cases">事例</a>
+      <a href="#price">費用</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#faq">よくある質問</a>
     </nav>
-    <a class="btn sm" href="#contact">相談する</a>
+    <a class="btn sm" href="#contact">無料で相談</a>
   </div>
 </header>
 
 <main>
-  <div class="wrap hero">
-    <h1>要件があいまいな段階から、<br>リリース後の運用まで。</h1>
-    <p class="lead">
-      ホームページを作りたい、手作業の多い業務をシステムで楽にしたい、新しいサービスを立ち上げたい。そんな企業や個人の方のご相談を、ITの専門知識がなくても大丈夫なように、やりたいことの整理から一緒に進めます。PM・上流SEとして17年、28案件の経験があり、新規サービスの企画やマーケティングから、開発チームのPM、技術顧問まで対応します。
-    </p>
-    <div class="cta">
-      <a class="btn" href="#contact">無料で相談する</a>
-      <a class="btn ghost" href="#for-clients">ご依頼の方へ</a>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><div class="v num">17<small>年</small></div><div class="k">IT実務経験</div></div>
-      <div class="stat"><div class="v num">28<small>件</small></div><div class="k">参画プロジェクト</div></div>
-      <div class="stat"><div class="v num">100<small>名+</small></div><div class="k">VPoEとして2拠点の組織を統括</div></div>
-      <div class="stat"><div class="v num">30→15<small>%</small></div><div class="k">エンジニアの離職率を半減</div></div>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tagline">個人事業主・小さな会社のITパートナー</span>
+        <h1><span class="nw">ホームページも、</span><span class="nw">仕組みづくりも。</span><br><span class="nw"><span class="hl">「何から始めれば？」</span>から</span><br><span class="nw">一緒に考えます。</span></h1>
+        <p class="lead">ITの専門知識は要りません。やりたいことや困っていることを、そのままお話しください。IT業界17年の経験をもとに、必要なものだけを、わかる言葉でご提案します。</p>
+        <div class="cta">
+          <a class="btn" href="#contact">無料で相談してみる</a>
+          <a class="btn ghost" href="#services">できることを見る</a>
+        </div>
+        <div class="badges">
+          <span>ご相談・お見積もり無料</span>
+          <span>オンラインで全国対応</span>
+          <span>小さなご依頼も歓迎</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <svg class="avatar" role="img" aria-label="K.Kのアイコン"><use href="#avatar"/></svg>
+        <div class="name">K.K</div>
+        <div class="role">Web・システムの企画／制作／導入支援</div>
+        <div class="bubble">「こんなこと頼めるのかな？」という段階でも大丈夫です。まずは気軽にお話を聞かせてください。</div>
+        <dl>
+          <dt>経験</dt><dd>IT業界17年・28プロジェクト</dd>
+          <dt>得意</dt><dd>新しいサービスの立ち上げ</dd>
+          <dt>対応</dt><dd>オンライン（東京・埼玉は訪問も可）</dd>
+        </dl>
+      </div>
     </div>
   </div>
 
-  <section id="for-clients">
+  <section class="alt" id="worries">
     <div class="wrap">
-      <h2>こんなお悩みはありませんか？</h2>
-      <p class="intro">「何から頼めばいいかわからない」段階からで構いません。目的をうかがって、必要なものだけをご提案します。</p>
-      <div class="aud">
-        <div class="card">
-          <span class="label">ホームページを作りたい方</span>
-          <h3>会社やお店、個人の活動を、<br>伝わるホームページに。</h3>
-          <ul class="check">
-            <li>ホームページがない、または古いまま更新できていない</li>
-            <li>作ったものの、問い合わせや採用応募につながらない</li>
-            <li>制作会社に頼みたいが、何を伝えればいいかわからない</li>
-            <li>公開した後の更新や管理まで任せたい</li>
-          </ul>
-          <h4>お任せいただけること</h4>
-          <ul class="check">
-            <li>サイトの目的と構成の整理、ページ構成案の作成</li>
-            <li>デザインのディレクション、制作（WordPressにも対応）</li>
-            <li>ドメイン、サーバー、メールの設定</li>
-            <li>検索で見つけてもらうための対策（SEO）、アクセス解析の設定</li>
-            <li>公開後の更新、保守、改善のご提案</li>
-          </ul>
-          <div class="proof"><strong>実績：</strong>コーポレートサイトを予定どおりの工期で納品し、保守契約も継続受注。メディアサイトでは公開3か月で4,500UUを達成しました。</div>
-          <a class="btn" href="#contact">ホームページの相談をする</a>
-        </div>
-        <div class="card">
-          <span class="label">システムを導入したい方</span>
-          <h3>Excelや紙、手作業の業務を、<br>仕組みで楽に。</h3>
-          <ul class="check">
-            <li>Excel・紙・メールでの手作業が多く、ミスや手間が減らない</li>
-            <li>システムを入れたいが、何を選べばいいかわからない</li>
-            <li>開発会社の見積もりや提案が妥当か判断できない</li>
-            <li>生成AIを業務に取り入れたいが、進め方がわからない</li>
-          </ul>
-          <h4>お任せいただけること</h4>
-          <ul class="check">
-            <li>業務のヒアリングと課題の整理、やるべきことの優先順位づけ</li>
-            <li>既製サービスか開発かの比較検討、ツールの選定</li>
-            <li>要件定義書の作成、開発会社とのやりとりや見積もり確認の代行</li>
-            <li>小さな自動化ツールの開発（Googleスプレッドシート、Pythonなど）</li>
-            <li>導入後の定着支援、運用改善</li>
-          </ul>
-          <div class="proof"><strong>実績：</strong>受発注業務で仕入先選定・価格回答・納期回答を自動化し、対象業務の手作業を約30〜40%削減する見込み。開発会社との仕様・費用交渉も担当しました。</div>
-          <a class="btn" href="#contact">システムの相談をする</a>
-        </div>
+      <div class="sec-head">
+        <h2>こんなこと、ありませんか？</h2>
       </div>
-
-      <div class="promise">
-        <div class="card"><h3>専門用語を使わずにご説明します</h3><p>ITに詳しくない方にもわかる言葉で、選択肢とそれぞれのメリット・デメリットをお伝えします。</p></div>
-        <div class="card"><h3>必要以上のものはおすすめしません</h3><p>まずは小さく始めて効果を確かめる進め方を基本にしています。既製サービスで足りる場合は、そうお伝えします。</p></div>
-        <div class="card"><h3>作って終わりにしません</h3><p>公開・導入後の更新、保守、改善のご相談まで、継続してお付き合いします。</p></div>
+      <div class="worries">
+        <div class="worry"><span class="q">?</span>ホームページがない、または古いまま放置している</div>
+        <div class="worry"><span class="q">?</span>ホームページはあるのに、問い合わせが来ない</div>
+        <div class="worry"><span class="q">?</span>Excelや紙での手作業が多くて、毎日時間がとられる</div>
+        <div class="worry"><span class="q">?</span>システムを入れたいけど、何を選べばいいかわからない</div>
+        <div class="worry"><span class="q">?</span>新しいサービスのアイデアを、形にする方法がわからない</div>
+        <div class="worry"><span class="q">?</span>制作会社の見積もりが妥当なのか判断できない</div>
       </div>
-    </div>
-  </section>
-
-  <section id="strengths">
-    <div class="wrap">
-      <h2>4つの強み</h2>
-      <p class="intro">「話が通じる技術者」として、ビジネス側と開発側のあいだに立ちます。</p>
-      <div class="grid2">
-        <div class="card">
-          <div class="idx">01</div>
-          <h3>新規サービスの立ち上げ経験が豊富</h3>
-          <p>教育サービス、マッチングサイト、メディア、Webアプリなど、ゼロからの立ち上げを数多く経験してきました。開発だけでなく、企画、事業計画、集客やSEOなどのマーケティング、営業まで一緒に考えます。</p>
-        </div>
-        <div class="card">
-          <div class="idx">02</div>
-          <h3>上流工程と合意形成</h3>
-          <p>現場ヒアリングで課題を洗い出し、優先度をつけて要件に落とし込みます。顧客・ベンダー・社内部門の調整、仕様と費用の交渉まで担当します。</p>
-        </div>
-        <div class="card">
-          <div class="idx">03</div>
-          <h3>手を動かせるPM</h3>
-          <p>Java・PHP・JavaScriptでの開発経験があり、設計レビューやコードレビュー、技術選定を自分で行えます。Vercel・SupabaseなどのクラウドサービスとAIコーディングを使い、Webアプリを1人で作り上げることもできます。</p>
-        </div>
-        <div class="card">
-          <div class="idx">04</div>
-          <h3>生成AIを使った効率化</h3>
-          <p>Claude CodeやChatGPTを使った開発、プロンプト設計、AIを組み込んだ運用フローなど、少人数でも速く、継続して回る仕組みを作ります。</p>
-        </div>
-      </div>
+      <p class="answer">ひとつでも当てはまったら、<em>まずはご相談ください。</em></p>
     </div>
   </section>
 
   <section id="services">
     <div class="wrap">
-      <h2>ご依頼いただけること</h2>
-      <p class="intro">プロジェクト単位での参画も、特定の工程だけのスポット支援も対応します。</p>
-      <div class="grid2">
-        <div class="card wide">
-          <h3>新規サービスの立ち上げ支援（企画・マーケティング）</h3>
+      <div class="sec-head">
+        <h2>お手伝いできること</h2>
+        <p>計画から公開・導入後のサポートまで、まとめてお任せいただけます。一部だけのご依頼も大丈夫です。</p>
+      </div>
+      <div class="grid3">
+        <div class="card svc">
+          <div class="icon c-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/></svg></div>
+          <h3>ホームページ制作</h3>
+          <p class="desc">会社やお店、個人の活動の魅力が伝わり、問い合わせにつながるホームページを作ります。</p>
           <ul>
-            <li>サービスコンセプトの整理、事業計画・収益モデルの検討</li>
-            <li>MVP（最小限の機能）の定義と、小さく作って早く検証する進め方の設計</li>
-            <li>集客・SEO・SNSなどのマーケティング施策、料金プランの設計</li>
-            <li>Vercel・Supabaseなどを使ったプロトタイプやWebアプリの開発</li>
+            <li>何を載せるかの整理から一緒に</li>
+            <li>デザイン・制作（WordPressにも対応）</li>
+            <li>ドメイン・サーバー・メールの設定</li>
+            <li>検索で見つけてもらうための対策</li>
+            <li>公開後の更新・保守</li>
           </ul>
+          <div class="for"><b>こんな方に：</b>開業・独立したばかりの方、今のサイトを作り直したい方</div>
         </div>
-        <div class="card">
-          <h3>PM・PMO／要件定義支援</h3>
+        <div class="card svc">
+          <div class="icon c-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.6 6.6l2.1 2.1M17.3 15.3l2.1 2.1M3 12h3M18 12h3M4.6 17.4l2.1-2.1M17.3 8.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>業務の効率化・システム導入</h3>
+          <p class="desc">毎日の手作業や二度手間を減らして、本業に使える時間を増やします。</p>
           <ul>
-            <li>業務ヒアリング、課題整理、要件定義書の作成</li>
-            <li>WBS・見積もり作成、MVPを前提にしたフェーズ分け</li>
-            <li>ベンダー管理、仕様・費用の調整、受け入れ試験</li>
+            <li>今の仕事の流れを聞いて、ムダを整理</li>
+            <li>既製サービスか、作るかを比べてご提案</li>
+            <li>スプレッドシートなどを使った自動化</li>
+            <li>AI（ChatGPTなど）の業務への取り入れ</li>
+            <li>開発会社とのやりとりの代行</li>
           </ul>
+          <div class="for"><b>こんな方に：</b>Excel・紙・メールでの管理が限界になってきた方</div>
         </div>
-        <div class="card">
-          <h3>Webサイト・Webシステム開発</h3>
+        <div class="card svc">
+          <div class="icon c-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></div>
+          <h3>新しいサービスの立ち上げ</h3>
+          <p class="desc">アイデアの段階から、企画・集客まで含めて形にするお手伝いをします。いちばんの得意分野です。</p>
           <ul>
-            <li>コーポレートサイト、採用サイト、メディアの構築</li>
-            <li>WordPressのテーマ開発、SEOの内部対策、GA4・Search Consoleの設定</li>
-            <li>Laravel・Spring Bootなどによる業務システムの開発・保守</li>
+            <li>アイデアの整理、ターゲットや料金の検討</li>
+            <li>最小限の機能で早く試す計画づくり</li>
+            <li>Webアプリ・サイトの開発</li>
+            <li>集客・SEO・SNSなどのマーケティング</li>
+            <li>公開後の改善の相談</li>
           </ul>
-        </div>
-        <div class="card">
-          <h3>生成AI・業務自動化</h3>
-          <ul>
-            <li>記事生成など、コンテンツ制作用プロンプトの設計と運用フロー作り</li>
-            <li>手作業の自動化（GAS、Python、スクレイピング）</li>
-            <li>BIや帳票自動化の実現可能性の調査</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>技術顧問・エンジニア組織づくり</h3>
-          <ul>
-            <li>技術戦略、ロードマップの策定</li>
-            <li>評価制度の設計、1on1の仕組み化、採用要件の定義</li>
-            <li>PL・新人の育成、レビュー体制の整備</li>
-          </ul>
+          <div class="for"><b>こんな方に：</b>新規事業や副業のアイデアを形にしたい方</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="works">
+  <section class="alt" id="reasons">
     <div class="wrap">
-      <h2>主な実績</h2>
-      <p class="intro">守秘義務の範囲で一部を抜粋しています。</p>
-
-      <article class="case">
-        <div class="meta"><b>2026年10月〜</b>個人開発／企画〜開発</div>
-        <div>
-          <h3>ビール記録Webアプリの開発</h3>
-          <p>飲んだビールを記録できるWebアプリを、企画から設計、開発、インフラ構築まで1人で手がけました。Claude CodeとChatGPTを開発に取り入れ、少ない工数で形にしています。</p>
-          <div class="result">2026年10月に着手し、<strong>短期間で完成</strong>。Vercel・Supabase・Cloudflareを組み合わせ、サーバーを自前で持たずに運用できる構成にしました</div>
-          <div class="tags"><span class="tag">サービス企画</span><span class="tag">Vercel</span><span class="tag">Supabase</span><span class="tag">Cloudflare（ストレージ）</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span></div>
+      <div class="sec-head">
+        <h2>安心してお任せいただくために</h2>
+      </div>
+      <div class="grid3">
+        <div class="card reason">
+          <div class="num">POINT 1</div>
+          <h3>専門用語を使わずに説明します</h3>
+          <p>ITに詳しくない方にもわかる言葉で、選択肢とそれぞれの良い点・注意点をお伝えします。わからないことは何度でも聞いてください。</p>
         </div>
-      </article>
-
-      <article class="case">
-        <div class="meta"><b>2026年〜</b>SE／3名チーム</div>
-        <div>
-          <h3>受発注システムの保守開発と業務改善</h3>
-          <p>顧客ヒアリングから要件定義、影響調査、受け入れ試験、顧客への説明までを一貫して担当。開発ベンダーと仕様・スケジュール・費用を調整し、価格交渉も行いました。</p>
-          <div class="result">仕入先選定・価格回答・納期回答を自動化し、対象業務の手作業を<strong>約30〜40%削減</strong>する見込み</div>
-          <div class="tags"><span class="tag">要件定義</span><span class="tag">ベンダー調整</span><span class="tag">Python</span><span class="tag">Amazon QuickSight 調査</span></div>
+        <div class="card reason">
+          <div class="num">POINT 2</div>
+          <h3>必要以上のものはすすめません</h3>
+          <p>まずは小さく始めて、効果を確かめてから広げる進め方が基本です。既製のサービスで十分な場合は、正直にそうお伝えします。</p>
         </div>
-      </article>
-
-      <article class="case">
-        <div class="meta"><b>2025年</b>PM・SE／3名チーム</div>
-        <div>
-          <h3>キュレーションサイト5件の立ち上げと運用</h3>
-          <p>キーワード調査と競合分析をもとにサイト構成を提案。WordPressのテーマ構築、サーバーやDNSの設定、記事生成プロンプトの設計まで担当しました。</p>
-          <div class="result">公開から3か月で<strong>4,500UU</strong>。AIを組み込んだ運用フローで、少人数でも継続して更新できる体制を作りました</div>
-          <div class="tags"><span class="tag">SEO</span><span class="tag">WordPress</span><span class="tag">生成AI</span><span class="tag">nginx / MariaDB</span></div>
+        <div class="card reason">
+          <div class="num">POINT 3</div>
+          <h3>作って終わりにしません</h3>
+          <p>公開・導入した後の更新や「ここを変えたい」というご相談まで、継続してお付き合いします。</p>
         </div>
-      </article>
-
-      <article class="case">
-        <div class="meta"><b>2025年</b>PM／3名チーム</div>
-        <div>
-          <h3>中小企業向けコーポレートサイト開発</h3>
-          <p>要件定義、ワイヤーフレーム作成、デザインディレクション、ドメイン・サーバー・解析ツールの設定、テスト計画を担当しました。</p>
-          <div class="result">予定どおりの工期で納品し、<strong>保守契約を継続受注</strong>。生成AIを使ったコンテンツ制作フローも提案・導入しました</div>
-          <div class="tags"><span class="tag">ディレクション</span><span class="tag">Next.js</span><span class="tag">GitLab</span></div>
-        </div>
-      </article>
-
-      <article class="case">
-        <div class="meta"><b>2023〜2024年</b>VPoE／100名以上・2拠点</div>
-        <div>
-          <h3>技術統括責任者としての組織づくり</h3>
-          <p>経営陣の直下で、エンジニア・マーケター・デザイナーを含む100名以上、2拠点の組織を統括。技術戦略、評価制度の改定、採用、複数プロジェクトの統括、請負案件の顧客折衝を担当しました。</p>
-          <div class="result">評価制度の刷新と1on1の定例化により、エンジニアの<strong>離職率を30%から15%に半減</strong>。採用プロセスを見直し、内定率も向上しました</div>
-          <div class="tags"><span class="tag">技術戦略</span><span class="tag">評価制度</span><span class="tag">採用</span><span class="tag">プロジェクト統括</span></div>
-        </div>
-      </article>
-
-      <article class="case">
-        <div class="meta"><b>2019〜2022年</b>PM兼PL・SE、事業責任者／15名</div>
-        <div>
-          <h3>オンラインプログラミング教育サービスの立ち上げと運営</h3>
-          <p>企画、要件定義、設計、バックエンド開発（Java / Spring Boot）までを主導。リリース後は事業責任者として、事業計画、予算、講師管理、法人営業も担当しました。</p>
-          <div class="result">計画どおりのスケジュールでサービスを公開。法人の導入先を増やし、<strong>受講者の学習達成率と満足度も向上</strong>しました</div>
-          <div class="tags"><span class="tag">新規事業</span><span class="tag">Spring Boot</span><span class="tag">Vue</span><span class="tag">AWS</span></div>
-        </div>
-      </article>
-
-      <article class="case">
-        <div class="meta"><b>2022〜2024年</b>PM兼PL／4名</div>
-        <div>
-          <h3>エンジニアスキル管理システムの構築と運用保守</h3>
-          <p>企画から要件定義、設計、レビュー、リリース、運用改善までを担当。PLと新卒メンバーの育成も行いました。</p>
-          <div class="result">Googleアカウント認証（OAuth2）の導入とUI改善で、<strong>使いやすさとセキュリティを両立</strong>。Laravelは未経験から短期間で習得しました</div>
-          <div class="tags"><span class="tag">Laravel</span><span class="tag">MariaDB</span><span class="tag">育成</span></div>
-        </div>
-      </article>
-
+      </div>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="cases">
     <div class="wrap">
-      <h2>スキル</h2>
-      <div class="card">
-        <div class="skillrow"><h4>言語</h4><div><span class="pill lv3">Java</span><span class="pill lv3">JavaScript</span><span class="pill lv3">SQL</span><span class="pill lv3">HTML / CSS</span><span class="pill">PHP</span><span class="pill">Google Apps Script</span><span class="pill">VBA</span><span class="pill">Python</span><span class="pill">TypeScript</span><span class="pill">C#</span></div></div>
-        <div class="skillrow"><h4>フレームワーク</h4><div><span class="pill lv3">Spring Boot</span><span class="pill">Spring Framework</span><span class="pill">Struts / Struts2</span><span class="pill">MyBatis</span><span class="pill">WordPress</span><span class="pill">Laravel</span><span class="pill">Vue / React</span><span class="pill">Next.js</span></div></div>
-        <div class="skillrow"><h4>DB</h4><div><span class="pill lv3">PostgreSQL</span><span class="pill lv3">MySQL</span><span class="pill">MariaDB</span><span class="pill">Oracle</span><span class="pill">SQL Server</span></div></div>
-        <div class="skillrow"><h4>インフラ・ミドルウェア</h4><div><span class="pill lv3">Apache</span><span class="pill lv3">Tomcat</span><span class="pill">nginx</span><span class="pill">RHEL / CentOS / AlmaLinux</span><span class="pill">AWS（RDS・SNS・Lambda）</span><span class="pill">Azure VM</span></div></div>
-        <div class="skillrow"><h4>クラウドサービス</h4><div><span class="pill">Vercel</span><span class="pill">Supabase</span><span class="pill">Cloudflare（ストレージ）</span></div></div>
-        <div class="skillrow"><h4>開発・管理ツール</h4><div><span class="pill lv3">Git / GitLab</span><span class="pill lv3">Jenkins</span><span class="pill lv3">Redmine</span><span class="pill lv3">SVN</span><span class="pill">Backlog</span><span class="pill">Asana</span><span class="pill">Salesforce</span></div></div>
-        <div class="skillrow"><h4>AI・データ</h4><div><span class="pill">Claude Code</span><span class="pill">ChatGPT</span><span class="pill">Gemini</span><span class="pill">Grok</span><span class="pill">Microsoft Copilot</span><span class="pill">生成AIプロンプト設計</span><span class="pill">LightGBM</span><span class="pill">XGBoost</span><span class="pill">scikit-learn</span><span class="pill">Optuna</span><span class="pill">Selenium</span></div></div>
-        <div class="skillrow"><h4>企画・マーケティング</h4><div><span class="pill">新規サービス企画</span><span class="pill">事業計画・料金プラン設計</span><span class="pill">SEO（キーワード調査・内部対策）</span><span class="pill">GA4</span><span class="pill">Search Console</span><span class="pill">ドメイン・DNS・SMTP設定</span></div></div>
-        <div class="skillrow"><h4>資格</h4><div><span class="pill">情報セキュリティマネジメント</span></div></div>
+      <div class="sec-head">
+        <h2>これまでのお手伝いの例</h2>
+        <p>守秘義務の範囲で、一部をご紹介します。</p>
+      </div>
+      <div class="grid2">
+        <div class="card case">
+          <span class="kind c-orange">ホームページ制作</span>
+          <h3>中小企業のコーポレートサイト</h3>
+          <p>載せる内容の整理からデザインの方向づけ、サーバー設定まで担当。記事づくりにAIを使う方法も提案し、更新の手間を減らしました。</p>
+          <div class="result"><span class="big">予定どおり公開</span><span class="small">公開後の保守もご依頼いただいています</span></div>
+        </div>
+        <div class="card case">
+          <span class="kind c-orange">集客・情報サイト</span>
+          <h3>情報サイト5つの立ち上げ</h3>
+          <p>検索されやすい言葉を調べてサイトの構成を考え、記事づくりにAIを取り入れて、少人数でも更新を続けられる体制を作りました。</p>
+          <div class="result"><span class="big">4,500人</span><span class="small">公開から3か月での訪問者数</span></div>
+        </div>
+        <div class="card case">
+          <span class="kind c-green">業務の効率化</span>
+          <h3>受発注業務の手作業を自動化</h3>
+          <p>現場の方にお話を聞いて困りごとを整理。仕入先選びや価格・納期の回答を自動化する仕組みの導入を進め、開発会社との費用交渉も担当しました。</p>
+          <div class="result"><span class="big">約30〜40%</span><span class="small">対象業務の手作業を削減する見込み</span></div>
+        </div>
+        <div class="card case">
+          <span class="kind c-yellow">新サービスの立ち上げ</span>
+          <h3>オンラインのプログラミング教室</h3>
+          <p>サービスの企画から開発、講師の採用まで担当。公開後は事業の責任者として、運営や法人向けの営業も行いました。</p>
+          <div class="result"><span class="big">計画どおり開始</span><span class="small">導入企業を増やし、受講者の満足度も向上</span></div>
+        </div>
+        <div class="card case">
+          <span class="kind c-yellow">Webアプリ開発</span>
+          <h3>ビールの記録アプリ（自主制作）</h3>
+          <p>飲んだビールを記録できるWebアプリを、企画から開発まで1人で制作。最新のクラウドサービスとAIを活用して、少ない手間で形にしました。</p>
+          <div class="result"><span class="big">1人で完成</span><span class="small">2026年10月に着手</span></div>
+        </div>
+        <div class="card case">
+          <span class="kind c-green">チームづくり</span>
+          <h3>100名以上のIT組織の責任者</h3>
+          <p>エンジニア・デザイナー・マーケターが働く2拠点の組織を統括。評価の仕組みや面談の習慣を見直し、働きやすい環境を作りました。</p>
+          <div class="result"><span class="big">離職率 半減</span><span class="small">30% → 15%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="price">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>費用について</h2>
+        <p>内容や規模によって変わるため、お話を伺ってからお見積もりをお出しします。</p>
+      </div>
+      <div class="price">
+        <div class="card free">
+          <h3>ご相談・お見積もりは無料です</h3>
+          <p>オンラインで30〜60分ほど、今の状況やご希望を伺います。その場で無理にご契約をおすすめすることはありません。</p>
+          <a class="btn" href="#contact">無料相談を申し込む</a>
+        </div>
+        <div class="card">
+          <h3>ご予算に合わせて調整できます</h3>
+          <ul>
+            <li>優先度の高いものから、段階的に進められます</li>
+            <li>ホームページの一部修正など、小さな作業からお受けします</li>
+            <li>公開後の保守は、月ごとのご契約も可能です</li>
+            <li>お見積もりの内訳は、わかりやすくご説明します</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="flow">
     <div class="wrap">
-      <h2>ご依頼の流れ</h2>
-      <p class="intro">「まだ要件が固まっていない」段階でもお気軽にご相談ください。</p>
-      <div class="flow">
-        <div class="card"><div class="idx">STEP 1</div><h3>ご相談</h3><p>フォームかメールで、現状の課題や実現したいことをお知らせください。</p></div>
-        <div class="card"><div class="idx">STEP 2</div><h3>ヒアリング</h3><p>オンラインで30〜60分ほどお話を伺い、論点を整理します。</p></div>
-        <div class="card"><div class="idx">STEP 3</div><h3>ご提案・お見積もり</h3><p>進め方、体制、スケジュール、費用をまとめてご提示します。</p></div>
-        <div class="card"><div class="idx">STEP 4</div><h3>着手</h3><p>定例ミーティングと進捗共有を行いながら進めます。</p></div>
+      <div class="sec-head">
+        <h2>ご依頼の流れ</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>お問い合わせ</h3><p>メールで、困っていることやご希望を簡単にお知らせください。</p></div>
+        <div class="step"><h3>無料相談</h3><p>オンラインで30〜60分ほど、詳しくお話を伺います。</p></div>
+        <div class="step"><h3>ご提案・お見積もり</h3><p>進め方・スケジュール・費用をまとめてご提示します。</p></div>
+        <div class="step"><h3>スタート</h3><p>こまめに進み具合を共有しながら進めます。</p></div>
       </div>
     </div>
   </section>
 
-  <section id="faq">
+  <section class="alt" id="profile">
     <div class="wrap">
-      <h2>よくあるご質問</h2>
+      <div class="sec-head">
+        <h2>プロフィール</h2>
+      </div>
+      <div class="card profile">
+        <div class="side">
+          <svg class="avatar" role="img" aria-label="K.Kのアイコン"><use href="#avatar"/></svg>
+          <div class="name">K.K</div>
+          <div class="role">Web・システムの企画／制作／導入支援</div>
+        </div>
+        <div>
+          <p>はじめまして、K.Kです。システムエンジニアとしてキャリアを始め、17年間で28のプロジェクトに関わってきました。</p>
+          <p>特に多く経験してきたのが、新しいサービスをゼロから立ち上げる仕事です。企画や集客の方法を考えるところから、開発、公開後の運営まで担当してきました。お客様のお話をじっくり聞いて「本当に必要なもの」を見つけ、それを形にするのが得意です。</p>
+          <p>最近はAIを使った開発にも力を入れていて、自分でもビールの記録アプリを作っています。新しい技術を、お客様の仕事が楽になる形で取り入れていきたいと思っています。</p>
+          <ul class="history">
+            <li><b>2009年〜</b>システムエンジニアとして、業務システムやWebサイトの開発を担当</li>
+            <li><b>2016年〜</b>開発チームのリーダーとして、メンバーの育成にも携わる</li>
+            <li><b>2019年〜</b>オンライン教育サービスを立ち上げ、事業責任者として運営</li>
+            <li><b>2023年〜</b>技術部門の責任者として、100名以上・2拠点の組織を統括</li>
+            <li><b>2025年〜</b>ホームページ制作、情報サイトの立ち上げ、業務改善などを支援</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="biz" id="business">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>企業・開発チームの方へ</h2>
+        <p>プロジェクトマネージャーや技術顧問としての参画もお受けしています。</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="v">17<small>年</small></div><div class="k">IT実務経験</div></div>
+        <div class="stat"><div class="v">28<small>件</small></div><div class="k">参画プロジェクト</div></div>
+        <div class="stat"><div class="v">100<small>名+</small></div><div class="k">VPoEとして2拠点を統括</div></div>
+        <div class="stat"><div class="v">30→15<small>%</small></div><div class="k">エンジニア離職率</div></div>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <h3>PM・PMO／要件定義</h3>
+          <p>業務ヒアリング、要件定義、WBS・見積もり、MVPを前提にしたフェーズ設計、ベンダー管理と仕様・費用の調整、受け入れ試験まで対応します。</p>
+        </div>
+        <div class="card">
+          <h3>技術顧問・エンジニア組織づくり</h3>
+          <p>技術戦略とロードマップの策定、評価制度の設計、1on1の仕組み化、採用要件の定義、PL・新人の育成とレビュー体制の整備を支援します。</p>
+        </div>
+      </div>
+      <details class="skills">
+        <summary>対応できる技術・ツールを見る</summary>
+        <div class="skillrow"><h4>言語</h4><div><span class="pill">Java</span><span class="pill">JavaScript</span><span class="pill">SQL</span><span class="pill">HTML / CSS</span><span class="pill">PHP</span><span class="pill">Google Apps Script</span><span class="pill">VBA</span><span class="pill">Python</span><span class="pill">TypeScript</span><span class="pill">C#</span></div></div>
+        <div class="skillrow"><h4>フレームワーク</h4><div><span class="pill">Spring Boot</span><span class="pill">Spring Framework</span><span class="pill">Struts / Struts2</span><span class="pill">MyBatis</span><span class="pill">WordPress</span><span class="pill">Laravel</span><span class="pill">Vue / React</span><span class="pill">Next.js</span></div></div>
+        <div class="skillrow"><h4>DB</h4><div><span class="pill">PostgreSQL</span><span class="pill">MySQL</span><span class="pill">MariaDB</span><span class="pill">Oracle</span><span class="pill">SQL Server</span></div></div>
+        <div class="skillrow"><h4>インフラ・ミドルウェア</h4><div><span class="pill">Apache</span><span class="pill">Tomcat</span><span class="pill">nginx</span><span class="pill">RHEL / CentOS / AlmaLinux</span><span class="pill">AWS（RDS・SNS・Lambda）</span><span class="pill">Azure VM</span></div></div>
+        <div class="skillrow"><h4>クラウドサービス</h4><div><span class="pill">Vercel</span><span class="pill">Supabase</span><span class="pill">Cloudflare（ストレージ）</span></div></div>
+        <div class="skillrow"><h4>開発・管理ツール</h4><div><span class="pill">Git / GitLab</span><span class="pill">Jenkins</span><span class="pill">Redmine</span><span class="pill">SVN</span><span class="pill">Backlog</span><span class="pill">Asana</span><span class="pill">Salesforce</span></div></div>
+        <div class="skillrow"><h4>AI・データ</h4><div><span class="pill">Claude Code</span><span class="pill">ChatGPT</span><span class="pill">Gemini</span><span class="pill">Grok</span><span class="pill">Microsoft Copilot</span><span class="pill">生成AIプロンプト設計</span><span class="pill">LightGBM</span><span class="pill">XGBoost</span><span class="pill">scikit-learn</span><span class="pill">Optuna</span><span class="pill">Selenium</span></div></div>
+        <div class="skillrow"><h4>企画・マーケティング</h4><div><span class="pill">新規サービス企画</span><span class="pill">事業計画・料金プラン設計</span><span class="pill">SEO（キーワード調査・内部対策）</span><span class="pill">GA4</span><span class="pill">Search Console</span><span class="pill">ドメイン・DNS・SMTP設定</span></div></div>
+        <div class="skillrow"><h4>資格</h4><div><span class="pill">情報セキュリティマネジメント</span></div></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>よくあるご質問</h2>
+      </div>
       <div class="faq">
-        <details><summary>ITやWebの知識がまったくないのですが、相談できますか？</summary><p>もちろんです。「こんなことに困っている」「こうなったらいいな」をそのままお話しください。必要なことはこちらで整理して、わかりやすくご説明します。</p></details>
-        <details><summary>費用はどのくらいかかりますか？</summary><p>内容や規模によって変わるため、ヒアリングのあとにお見積もりをお出しします。ご予算に合わせて、優先度の高いものから段階的に進める方法もご提案できます。ご相談とお見積もりは無料です。</p></details>
-        <details><summary>小さな依頼でもお願いできますか？</summary><p>はい。ホームページの一部修正や、スプレッドシートを使った簡単な自動化など、小さなご依頼からお受けしています。</p></details>
-        <details><summary>すでに付き合いのある制作会社・開発会社がいます。</summary><p>その場合は、発注側の立場で要件の整理、見積もりや提案内容の確認、進捗管理をお手伝いします。専門家が間に入ることで、認識のずれや追加費用を防ぎやすくなります。</p></details>
+        <details><summary>パソコンやITにあまり詳しくないのですが、大丈夫ですか？</summary><p>もちろん大丈夫です。「こんなことに困っている」「こうなったらいいな」をそのままお話しください。必要なことはこちらで整理して、わかりやすくご説明します。</p></details>
+        <details><summary>相談したら、必ず契約しないといけませんか？</summary><p>いいえ。ご相談だけでも歓迎です。お話を伺ったうえで、ご依頼いただくかどうかはゆっくりご検討ください。</p></details>
+        <details><summary>小さな依頼でもお願いできますか？</summary><p>はい。ホームページの一部修正や、スプレッドシートを使ったちょっとした自動化など、小さなご依頼からお受けしています。</p></details>
+        <details><summary>すでに付き合いのある制作会社・開発会社がいます。</summary><p>その場合は、お客様側の立場で、見積もりや提案内容の確認、やりとりのお手伝いをします。間に入ることで、認識のずれや思わぬ追加費用を防ぎやすくなります。</p></details>
         <details><summary>遠方でも依頼できますか？</summary><p>オンライン（Google Meet、Zoomなど）で全国から対応しています。東京都・埼玉県周辺であれば、打ち合わせに伺うこともできます。</p></details>
-        <details><summary>公開・導入した後のサポートはありますか？</summary><p>更新作業、保守、不具合対応、アクセス解析をもとにした改善のご提案まで、継続してサポートします。</p></details>
+        <details><summary>公開・導入した後のサポートはありますか？</summary><p>更新作業、保守、不具合への対応、アクセス状況をもとにした改善のご提案まで、継続してサポートします。</p></details>
       </div>
     </div>
   </section>
@@ -424,18 +506,16 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
   <section id="contact">
     <div class="wrap">
       <div class="contact">
-        <h2>お仕事のご相談</h2>
-        <p>ホームページ制作、システム導入、PM・技術顧問としての参画など、案件の大小にかかわらずお気軽にご連絡ください。ご相談とお見積もりは無料です。</p>
+        <h2>まずは気軽にご相談ください</h2>
+        <p>「まだ何も決まっていない」「費用感だけ知りたい」でも大丈夫です。メールで、困っていることやご希望を簡単にお知らせください。</p>
+        <a class="btn" href="mailto:moku.kyo@gmail.com?subject=%E3%81%94%E7%9B%B8%E8%AB%87">メールで無料相談する</a>
+        <div class="mail">moku.kyo@gmail.com</div>
         <dl>
           <dt>稼働開始</dt><dd>2027年1月〜</dd>
           <dt>稼働日数</dt><dd>週1〜4日（応相談）</dd>
-          <dt>働き方</dt><dd>フルリモート（東京都・埼玉県周辺への出社も可）</dd>
+          <dt>打ち合わせ</dt><dd>オンライン（東京都・埼玉県周辺は訪問も可）</dd>
           <dt>契約形態</dt><dd>準委任・請負</dd>
         </dl>
-        <div class="cta" style="justify-content:center">
-          <a class="btn" href="mailto:moku.kyo@gmail.com?subject=%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">メールで相談する</a>
-        </div>
-        <p style="margin:16px 0 0;font-size:14px">moku.kyo@gmail.com</p>
       </div>
     </div>
   </section>
