@@ -230,3 +230,13 @@ nav.links a[aria-current="page"]{color:var(--accent-dark);font-weight:700}
 .policy p,.policy li{font-size:15px}
 .policy ul{padding-left:1.4em;margin:0 0 14px}
 .policy .date{margin-top:40px;color:var(--muted);text-align:right}
+/* mobile nav labels */
+@media (max-width:820px){nav.links .long{display:none}nav.links{overflow:visible;justify-content:space-between;gap:12px}}
+/* keep phrases together */
+.nw{display:inline-block}
+.contact h2,.contact p,.contact dd{word-break:auto-phrase;text-wrap:pretty}
+@media (max-width:520px){.contact{padding:44px 20px}.contact dl{display:grid;grid-template-columns:1fr;gap:2px;padding:16px 18px}.contact dt{margin-top:8px}.contact dt:first-child{margin-top:0}}
+/* 5 cards: last one spans the remaining two columns */
+@media (min-width:861px){.grid3.fill-last>:last-child:nth-child(3n+2){grid-column:span 2}.grid3.fill-last>:last-child:nth-child(3n+2) ul{columns:2;column-gap:24px}}
+footer a{display:inline-block}
+.grid3.fill-last li{break-inside:avoid}
