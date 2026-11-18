@@ -222,3 +222,11 @@ nav.links a[aria-current="page"]{color:var(--accent-dark);font-weight:700}
 .members{display:grid;gap:20px}.contact .mail a{color:#fff}
 .axis .plus-pt{display:inline-block;margin-top:6px;font-style:normal;font-size:12px;font-weight:700;color:var(--green);background:var(--green-soft);border-radius:999px;padding:2px 10px}
 .axis .plus-pt.o{color:var(--accent-dark);background:var(--accent-soft)}
+.contact .mail.small{font-size:13px;opacity:.9}
+/* policy page */
+.policy .wrap{max-width:780px}
+.policy h1{font-size:clamp(26px,4vw,34px);margin:8px 0 20px}
+.policy h2{font-size:19px;margin:36px 0 10px;padding-left:12px;border-left:4px solid var(--accent)}
+.policy p,.policy li{font-size:15px}
+.policy ul{padding-left:1.4em;margin:0 0 14px}
+.policy .date{margin-top:40px;color:var(--muted);text-align:right}
